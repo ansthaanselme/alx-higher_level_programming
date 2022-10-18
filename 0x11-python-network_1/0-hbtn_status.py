@@ -3,7 +3,7 @@
 """
 Created on Mon Aug 24 05:14:59 2020
 
-@author: Robinson Montes
+@author: Anselme Dambe SANWOGOU
 """
 from urllib.request import urlopen
 
