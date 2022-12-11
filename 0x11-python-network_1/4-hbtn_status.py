@@ -1,17 +1,14 @@
+
 #!/usr/bin/python3
-# -*- coding: utf-8 -*-
+""" fetches http://alx-intranet/hbtn.io/status
+using the requests library.
 """
-Created on Mon Aug 24 07:02:53 2020
 
-@author: Robinson Montes
-"""
-from requests import get
-
+import requests
 
 if __name__ == "__main__":
-    url = 'https://intranet.hbtn.io/status'
-    response = get(url)
-    bytes_content = response.text
-    string = 'Body response:\n\t- type: {}\n\t- content: {}'.format(
-             type(bytes_content), bytes_content)
-    print(string)
+    r = requests.get("https://alx-intranet.hbtn.io/status")
+
+    print("Body response:")
+    print("\t- type: {}".format(type(r.text)))
+    print("\t- content: {}".format(r.text))
