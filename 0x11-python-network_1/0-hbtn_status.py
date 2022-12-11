@@ -1,18 +1,12 @@
 #!/usr/bin/python3
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Aug 24 05:14:59 2020
-
-@author: Anselme Dambe SANWOGOU
-"""
-from urllib.request import urlopen
+""" fetches https://alx-intranet.hbtn.io/status"""
+import urllib.request as req
 
 
 if __name__ == "__main__":
-    url = 'https://intranet.hbtn.io/status'
-    with urlopen(url) as response:
-        bytes_content = response.read()
-        content = bytes_content.decode('utf-8')
-        string = 'Body response:\n\t- type: {}\n\t- content: {}\n\t- \
-utf8 content: {}'.format(type(bytes_content), bytes_content, content)
-        print(string)
+    with req.urlopen('https://alx-intranet.hbtn.io/status') as response:
+        data = response.read()
+        print("Body response:")
+        print("\t- type: {}".format(type(data)))
+        print("\t- content: {}".format(data))
+        print("\t- utf8 content: {}".format(data.decode("utf-8")))
